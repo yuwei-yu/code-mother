@@ -1,7 +1,7 @@
 package com.yw.codemother.controller;
 
-import com.yupi.yuaicodemother.langgraph4j.CodeGenWorkflow;
-import com.yupi.yuaicodemother.langgraph4j.state.WorkflowContext;
+import com.yw.codemother.langgraph4j.CodeGenWorkflow;
+import com.yw.codemother.langgraph4j.state.WorkflowContext;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
