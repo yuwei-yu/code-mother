@@ -15,13 +15,17 @@ import com.yw.codemother.core.saver.CodeFileSaverExecutor;
 import com.yw.codemother.exception.BusinessException;
 import com.yw.codemother.exception.ErrorCode;
 import com.yw.codemother.model.enums.CodeGenTypeEnum;
+import dev.langchain4j.agent.tool.ToolExecutionRequest;
 import dev.langchain4j.model.chat.response.ChatResponse;
+import dev.langchain4j.model.chat.response.PartialToolCall;
 import dev.langchain4j.service.TokenStream;
 import dev.langchain4j.service.tool.ToolExecution;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+import reactor.core.scheduler.Schedulers;
 
 import java.io.File;
 
@@ -109,14 +113,49 @@ public class AiCodeGeneratorFacade {
      * @param appId       应用 ID
      * @return Flux<String> 流式响应
      */
+//
+//    private Flux<String> processTokenStream(TokenStream tokenStream, Long appId) {
+//        return Flux.create(sink -> {
+//            tokenStream.onPartialResponse((String partialResponse) -> {
+//                        AiResponseMessage aiResponseMessage = new AiResponseMessage(partialResponse);
+//                        sink.next(JSONUtil.toJsonStr(aiResponseMessage));
+//                    })
+//                    .onPartialToolExecutionRequest((index, toolExecutionRequest) -> {
+//                        ToolRequestMessage toolRequestMessage = new ToolRequestMessage(toolExecutionRequest);
+//                        sink.next(JSONUtil.toJsonStr(toolRequestMessage));
+//                    })
+//                    .onToolExecuted((ToolExecution toolExecution) -> {
+//                        ToolExecutedMessage toolExecutedMessage = new ToolExecutedMessage(toolExecution);
+//                        sink.next(JSONUtil.toJsonStr(toolExecutedMessage));
+//                    })
+//                    .onCompleteResponse((ChatResponse response) -> {
+//                        // 执行 Vue 项目构建（同步执行，确保预览时项目已就绪）
+//                        String projectPath = AppConstant.CODE_OUTPUT_ROOT_DIR + "/vue_project_" + appId;
+//                        vueProjectBuilder.buildProject(projectPath);
+//                        sink.complete();
+//                    })
+//                    .onError((Throwable error) -> {
+//                        error.printStackTrace();
+//                        sink.error(error);
+//                    })
+//                    .start();
+//        });
+//    }
     private Flux<String> processTokenStream(TokenStream tokenStream, Long appId) {
         return Flux.create(sink -> {
-            tokenStream.onPartialResponse((String partialResponse) -> {
+            tokenStream
+                    .onPartialResponse((String partialResponse) -> {
                         AiResponseMessage aiResponseMessage = new AiResponseMessage(partialResponse);
                         sink.next(JSONUtil.toJsonStr(aiResponseMessage));
                     })
-                    .onPartialToolExecutionRequest((index, toolExecutionRequest) -> {
-                        ToolRequestMessage toolRequestMessage = new ToolRequestMessage(toolExecutionRequest);
+                    .onPartialToolCall((PartialToolCall partialToolCall) -> {
+                        // 使用 partialArguments() 而不是 arguments()
+                        ToolExecutionRequest request = ToolExecutionRequest.builder()
+                                .id(partialToolCall.id())
+                                .name(partialToolCall.name())
+                                .arguments(partialToolCall.partialArguments())
+                                .build();
+                        ToolRequestMessage toolRequestMessage = new ToolRequestMessage(request);
                         sink.next(JSONUtil.toJsonStr(toolRequestMessage));
                     })
                     .onToolExecuted((ToolExecution toolExecution) -> {
@@ -124,10 +163,11 @@ public class AiCodeGeneratorFacade {
                         sink.next(JSONUtil.toJsonStr(toolExecutedMessage));
                     })
                     .onCompleteResponse((ChatResponse response) -> {
-                        // 执行 Vue 项目构建（同步执行，确保预览时项目已就绪）
                         String projectPath = AppConstant.CODE_OUTPUT_ROOT_DIR + "/vue_project_" + appId;
-                        vueProjectBuilder.buildProject(projectPath);
-                        sink.complete();
+                        // 异步构建，避免阻塞
+                        Mono.fromRunnable(() -> vueProjectBuilder.buildProject(projectPath))
+                                .subscribeOn(Schedulers.boundedElastic())
+                                .subscribe(null, sink::error, sink::complete);
                     })
                     .onError((Throwable error) -> {
                         error.printStackTrace();
@@ -136,7 +176,6 @@ public class AiCodeGeneratorFacade {
                     .start();
         });
     }
-
     /**
      * 通用流式代码处理方法
      *
