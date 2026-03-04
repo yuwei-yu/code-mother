@@ -1,6 +1,6 @@
 package com.yw.codemother.langgraph4j;
 
-import com.yupi.yuaicodemother.langgraph4j.state.WorkflowContext;
+import com.yw.codemother.langgraph4j.state.WorkflowContext;
 import lombok.extern.slf4j.Slf4j;
 import org.bsc.langgraph4j.CompiledGraph;
 import org.bsc.langgraph4j.GraphRepresentation;

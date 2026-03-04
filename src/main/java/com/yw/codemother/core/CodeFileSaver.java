@@ -3,9 +3,9 @@ package com.yw.codemother.core;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.StrUtil;
-import com.yupi.yuaicodemother.ai.model.HtmlCodeResult;
-import com.yupi.yuaicodemother.ai.model.MultiFileCodeResult;
-import com.yupi.yuaicodemother.model.enums.CodeGenTypeEnum;
+import com.yw.codemother.ai.model.HtmlCodeResult;
+import com.yw.codemother.ai.model.MultiFileCodeResult;
+import com.yw.codemother.model.enums.CodeGenTypeEnum;
 
 import java.io.File;
 import java.nio.charset.StandardCharsets;

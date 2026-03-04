@@ -1,6 +1,6 @@
 package com.yw.codemother.controller;
 
-import com.yupi.yuaicodemother.constant.AppConstant;
+import com.yw.codemother.constant.AppConstant;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;

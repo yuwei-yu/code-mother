@@ -1,6 +1,6 @@
 package com.yw.codemother.model.dto.user;
 
-import com.yupi.yuaicodemother.common.PageRequest;
+import com.yw.codemother.common.PageRequest;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

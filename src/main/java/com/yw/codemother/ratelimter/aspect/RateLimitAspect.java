@@ -1,10 +1,10 @@
 package com.yw.codemother.ratelimter.aspect;
 
-import com.yupi.yuaicodemother.exception.BusinessException;
-import com.yupi.yuaicodemother.exception.ErrorCode;
-import com.yupi.yuaicodemother.model.entity.User;
+import com.yw.codemother.exception.BusinessException;
+import com.yw.codemother.exception.ErrorCode;
+import com.yw.codemother.model.entity.User;
 import com.yw.codemother.ratelimter.annotation.RateLimit;
-import com.yupi.yuaicodemother.service.UserService;
+import com.yw.codemother.service.UserService;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;

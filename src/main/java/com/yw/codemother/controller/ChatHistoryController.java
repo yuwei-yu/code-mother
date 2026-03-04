@@ -2,20 +2,20 @@ package com.yw.codemother.controller;
 
 import com.mybatisflex.core.paginate.Page;
 import com.mybatisflex.core.query.QueryWrapper;
-import com.yupi.yuaicodemother.annotation.AuthCheck;
-import com.yupi.yuaicodemother.common.BaseResponse;
-import com.yupi.yuaicodemother.common.ResultUtils;
-import com.yupi.yuaicodemother.constant.UserConstant;
-import com.yupi.yuaicodemother.exception.ErrorCode;
-import com.yupi.yuaicodemother.exception.ThrowUtils;
-import com.yupi.yuaicodemother.model.dto.chathistory.ChatHistoryQueryRequest;
-import com.yupi.yuaicodemother.model.entity.ChatHistory;
-import com.yupi.yuaicodemother.model.entity.User;
-import com.yupi.yuaicodemother.service.UserService;
+import com.yw.codemother.annotation.AuthCheck;
+import com.yw.codemother.common.BaseResponse;
+import com.yw.codemother.common.ResultUtils;
+import com.yw.codemother.constant.UserConstant;
+import com.yw.codemother.exception.ErrorCode;
+import com.yw.codemother.exception.ThrowUtils;
+import com.yw.codemother.model.dto.chathistory.ChatHistoryQueryRequest;
+import com.yw.codemother.model.entity.ChatHistory;
+import com.yw.codemother.model.entity.User;
+import com.yw.codemother.service.UserService;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.*;
-import com.yupi.yuaicodemother.service.ChatHistoryService;
+import com.yw.codemother.service.ChatHistoryService;
 
 import java.time.LocalDateTime;
 

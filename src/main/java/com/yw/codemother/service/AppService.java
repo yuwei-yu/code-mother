@@ -2,11 +2,11 @@ package com.yw.codemother.service;
 
 import com.mybatisflex.core.query.QueryWrapper;
 import com.mybatisflex.core.service.IService;
-import com.yupi.yuaicodemother.model.dto.app.AppAddRequest;
-import com.yupi.yuaicodemother.model.dto.app.AppQueryRequest;
-import com.yupi.yuaicodemother.model.entity.App;
-import com.yupi.yuaicodemother.model.entity.User;
-import com.yupi.yuaicodemother.model.vo.AppVO;
+import com.yw.codemother.model.dto.app.AppAddRequest;
+import com.yw.codemother.model.dto.app.AppQueryRequest;
+import com.yw.codemother.model.entity.App;
+import com.yw.codemother.model.entity.User;
+import com.yw.codemother.model.vo.AppVO;
 import reactor.core.publisher.Flux;
 
 import java.util.List;

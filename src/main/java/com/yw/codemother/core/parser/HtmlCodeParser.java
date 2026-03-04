@@ -1,6 +1,6 @@
 package com.yw.codemother.core.parser;
 
-import com.yupi.yuaicodemother.ai.model.HtmlCodeResult;
+import com.yw.codemother.ai.model.HtmlCodeResult;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

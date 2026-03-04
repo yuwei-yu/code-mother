@@ -2,10 +2,10 @@ package com.yw.codemother.service;
 
 import com.mybatisflex.core.query.QueryWrapper;
 import com.mybatisflex.core.service.IService;
-import com.yupi.yuaicodemother.model.dto.user.UserQueryRequest;
-import com.yupi.yuaicodemother.model.entity.User;
-import com.yupi.yuaicodemother.model.vo.LoginUserVO;
-import com.yupi.yuaicodemother.model.vo.UserVO;
+import com.yw.codemother.model.dto.user.UserQueryRequest;
+import com.yw.codemother.model.entity.User;
+import com.yw.codemother.model.vo.LoginUserVO;
+import com.yw.codemother.model.vo.UserVO;
 import jakarta.servlet.http.HttpServletRequest;
 
 import java.util.List;

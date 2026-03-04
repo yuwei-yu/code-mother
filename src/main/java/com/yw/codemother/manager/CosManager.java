@@ -3,7 +3,7 @@ package com.yw.codemother.manager;
 import com.qcloud.cos.COSClient;
 import com.qcloud.cos.model.PutObjectRequest;
 import com.qcloud.cos.model.PutObjectResult;
-import com.yupi.yuaicodemother.config.CosClientConfig;
+import com.yw.codemother.config.CosClientConfig;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

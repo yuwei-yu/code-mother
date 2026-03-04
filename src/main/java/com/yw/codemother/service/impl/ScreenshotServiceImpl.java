@@ -2,11 +2,11 @@ package com.yw.codemother.service.impl;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
-import com.yupi.yuaicodemother.exception.ErrorCode;
-import com.yupi.yuaicodemother.exception.ThrowUtils;
-import com.yupi.yuaicodemother.manager.CosManager;
+import com.yw.codemother.exception.ErrorCode;
+import com.yw.codemother.exception.ThrowUtils;
+import com.yw.codemother.manager.CosManager;
 import com.yw.codemother.service.ScreenshotService;
-import com.yupi.yuaicodemother.utils.WebScreenshotUtils;
+import com.yw.codemother.utils.WebScreenshotUtils;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

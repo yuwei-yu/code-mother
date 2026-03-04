@@ -3,9 +3,9 @@ package com.yw.codemother.service;
 import com.mybatisflex.core.paginate.Page;
 import com.mybatisflex.core.query.QueryWrapper;
 import com.mybatisflex.core.service.IService;
-import com.yupi.yuaicodemother.model.dto.chathistory.ChatHistoryQueryRequest;
-import com.yupi.yuaicodemother.model.entity.ChatHistory;
-import com.yupi.yuaicodemother.model.entity.User;
+import com.yw.codemother.model.dto.chathistory.ChatHistoryQueryRequest;
+import com.yw.codemother.model.entity.ChatHistory;
+import com.yw.codemother.model.entity.User;
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;
 
 import java.time.LocalDateTime;

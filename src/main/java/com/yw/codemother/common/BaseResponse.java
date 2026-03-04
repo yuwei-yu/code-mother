@@ -1,6 +1,6 @@
 package com.yw.codemother.common;
 
-import com.yupi.yuaicodemother.exception.ErrorCode;
+import com.yw.codemother.exception.ErrorCode;
 import lombok.Data;
 
 import java.io.Serializable;

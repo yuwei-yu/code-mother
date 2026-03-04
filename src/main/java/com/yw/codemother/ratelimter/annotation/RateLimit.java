@@ -1,6 +1,6 @@
 package com.yw.codemother.ratelimter.annotation;
 
-import com.yupi.yuaicodemother.ratelimter.enums.RateLimitType;
+import com.yw.codemother.ratelimter.enums.RateLimitType;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

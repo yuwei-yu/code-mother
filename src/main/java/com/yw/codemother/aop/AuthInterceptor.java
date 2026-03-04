@@ -1,11 +1,11 @@
 package com.yw.codemother.aop;
 
-import com.yupi.yuaicodemother.annotation.AuthCheck;
-import com.yupi.yuaicodemother.exception.BusinessException;
-import com.yupi.yuaicodemother.exception.ErrorCode;
-import com.yupi.yuaicodemother.model.entity.User;
-import com.yupi.yuaicodemother.model.enums.UserRoleEnum;
-import com.yupi.yuaicodemother.service.UserService;
+import com.yw.codemother.annotation.AuthCheck;
+import com.yw.codemother.exception.BusinessException;
+import com.yw.codemother.exception.ErrorCode;
+import com.yw.codemother.model.entity.User;
+import com.yw.codemother.model.enums.UserRoleEnum;
+import com.yw.codemother.service.UserService;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import org.aspectj.lang.ProceedingJoinPoint;

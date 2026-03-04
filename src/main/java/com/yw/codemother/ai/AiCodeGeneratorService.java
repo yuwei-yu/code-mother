@@ -1,7 +1,7 @@
 package com.yw.codemother.ai;
 
-import com.yupi.yuaicodemother.ai.model.HtmlCodeResult;
-import com.yupi.yuaicodemother.ai.model.MultiFileCodeResult;
+import com.yw.codemother.ai.model.HtmlCodeResult;
+import com.yw.codemother.ai.model.MultiFileCodeResult;
 import dev.langchain4j.service.MemoryId;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.TokenStream;

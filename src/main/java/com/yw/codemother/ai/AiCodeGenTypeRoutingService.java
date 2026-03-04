@@ -1,6 +1,6 @@
 package com.yw.codemother.ai;
 
-import com.yupi.yuaicodemother.model.enums.CodeGenTypeEnum;
+import com.yw.codemother.model.enums.CodeGenTypeEnum;
 import dev.langchain4j.service.SystemMessage;
 
 /**

@@ -1,6 +1,6 @@
 package com.yw.codemother.common;
 
-import com.yupi.yuaicodemother.exception.ErrorCode;
+import com.yw.codemother.exception.ErrorCode;
 
 /**
  * 快速构造响应结果的工具类

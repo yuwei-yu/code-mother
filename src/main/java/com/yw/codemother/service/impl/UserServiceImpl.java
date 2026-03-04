@@ -5,14 +5,14 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import com.mybatisflex.core.query.QueryWrapper;
 import com.mybatisflex.spring.service.impl.ServiceImpl;
-import com.yupi.yuaicodemother.exception.BusinessException;
-import com.yupi.yuaicodemother.exception.ErrorCode;
-import com.yupi.yuaicodemother.model.dto.user.UserQueryRequest;
-import com.yupi.yuaicodemother.model.entity.User;
-import com.yupi.yuaicodemother.mapper.UserMapper;
-import com.yupi.yuaicodemother.model.enums.UserRoleEnum;
-import com.yupi.yuaicodemother.model.vo.LoginUserVO;
-import com.yupi.yuaicodemother.model.vo.UserVO;
+import com.yw.codemother.exception.BusinessException;
+import com.yw.codemother.exception.ErrorCode;
+import com.yw.codemother.model.dto.user.UserQueryRequest;
+import com.yw.codemother.model.entity.User;
+import com.yw.codemother.mapper.UserMapper;
+import com.yw.codemother.model.enums.UserRoleEnum;
+import com.yw.codemother.model.vo.LoginUserVO;
+import com.yw.codemother.model.vo.UserVO;
 import com.yw.codemother.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.yupi.yuaicodemother.constant.UserConstant.USER_LOGIN_STATE;
+import static com.yw.codemother.constant.UserConstant.USER_LOGIN_STATE;
 
 /**
  * 用户 服务层实现。

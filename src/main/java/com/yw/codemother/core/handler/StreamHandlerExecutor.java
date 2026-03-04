@@ -1,8 +1,8 @@
 package com.yw.codemother.core.handler;
 
-import com.yupi.yuaicodemother.model.entity.User;
-import com.yupi.yuaicodemother.model.enums.CodeGenTypeEnum;
-import com.yupi.yuaicodemother.service.ChatHistoryService;
+import com.yw.codemother.model.entity.User;
+import com.yw.codemother.model.enums.CodeGenTypeEnum;
+import com.yw.codemother.service.ChatHistoryService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

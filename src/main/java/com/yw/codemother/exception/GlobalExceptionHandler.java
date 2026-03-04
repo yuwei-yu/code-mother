@@ -1,10 +1,10 @@
 package com.yw.codemother.exception;
 
 import cn.hutool.json.JSONUtil;
-import com.yupi.yuaicodemother.common.BaseResponse;
-import com.yupi.yuaicodemother.common.ResultUtils;
-import com.yupi.yuaicodemother.exception.BusinessException;
-import com.yupi.yuaicodemother.exception.ErrorCode;
+import com.yw.codemother.common.BaseResponse;
+import com.yw.codemother.common.ResultUtils;
+import com.yw.codemother.exception.BusinessException;
+import com.yw.codemother.exception.ErrorCode;
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

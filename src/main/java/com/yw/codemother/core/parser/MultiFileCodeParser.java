@@ -1,6 +1,6 @@
 package com.yw.codemother.core.parser;
 
-import com.yupi.yuaicodemother.ai.model.MultiFileCodeResult;
+import com.yw.codemother.ai.model.MultiFileCodeResult;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

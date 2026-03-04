@@ -1,7 +1,7 @@
 package com.yw.codemother.mapper;
 
 import com.mybatisflex.core.BaseMapper;
-import com.yupi.yuaicodemother.model.entity.ChatHistory;
+import com.yw.codemother.model.entity.ChatHistory;
 
 /**
  * 对话历史 映射层。

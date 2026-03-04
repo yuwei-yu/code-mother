@@ -1,7 +1,7 @@
 package com.yw.codemother.mapper;
 
 import com.mybatisflex.core.BaseMapper;
-import com.yupi.yuaicodemother.model.entity.App;
+import com.yw.codemother.model.entity.App;
 
 /**
  * 应用 映射层。

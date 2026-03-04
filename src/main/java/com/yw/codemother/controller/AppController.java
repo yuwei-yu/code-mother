@@ -5,22 +5,22 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
 import com.mybatisflex.core.paginate.Page;
 import com.mybatisflex.core.query.QueryWrapper;
-import com.yupi.yuaicodemother.annotation.AuthCheck;
-import com.yupi.yuaicodemother.common.BaseResponse;
-import com.yupi.yuaicodemother.common.DeleteRequest;
-import com.yupi.yuaicodemother.common.ResultUtils;
-import com.yupi.yuaicodemother.constant.AppConstant;
-import com.yupi.yuaicodemother.constant.UserConstant;
-import com.yupi.yuaicodemother.exception.BusinessException;
-import com.yupi.yuaicodemother.exception.ErrorCode;
-import com.yupi.yuaicodemother.exception.ThrowUtils;
-import com.yupi.yuaicodemother.model.dto.app.*;
-import com.yupi.yuaicodemother.model.entity.User;
-import com.yupi.yuaicodemother.model.vo.AppVO;
-import com.yupi.yuaicodemother.ratelimter.annotation.RateLimit;
-import com.yupi.yuaicodemother.ratelimter.enums.RateLimitType;
-import com.yupi.yuaicodemother.service.ProjectDownloadService;
-import com.yupi.yuaicodemother.service.UserService;
+import com.yw.codemother.annotation.AuthCheck;
+import com.yw.codemother.common.BaseResponse;
+import com.yw.codemother.common.DeleteRequest;
+import com.yw.codemother.common.ResultUtils;
+import com.yw.codemother.constant.AppConstant;
+import com.yw.codemother.constant.UserConstant;
+import com.yw.codemother.exception.BusinessException;
+import com.yw.codemother.exception.ErrorCode;
+import com.yw.codemother.exception.ThrowUtils;
+import com.yw.codemother.model.dto.app.*;
+import com.yw.codemother.model.entity.User;
+import com.yw.codemother.model.vo.AppVO;
+import com.yw.codemother.ratelimter.annotation.RateLimit;
+import com.yw.codemother.ratelimter.enums.RateLimitType;
+import com.yw.codemother.service.ProjectDownloadService;
+import com.yw.codemother.service.UserService;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -28,8 +28,8 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.MediaType;
 import org.springframework.http.codec.ServerSentEvent;
 import org.springframework.web.bind.annotation.*;
-import com.yupi.yuaicodemother.model.entity.App;
-import com.yupi.yuaicodemother.service.AppService;
+import com.yw.codemother.model.entity.App;
+import com.yw.codemother.service.AppService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -266,7 +266,7 @@ public class AppController {
     @PostMapping("/good/list/page/vo")
     @Cacheable(
             value = "good_app_page",
-            key = "T(com.yupi.yuaicodemother.utils.CacheKeyUtils).generateKey(#appQueryRequest)",
+            key = "T(com.yw.codemother.utils.CacheKeyUtils).generateKey(#appQueryRequest)",
             condition = "#appQueryRequest.pageNum <= 10"
     )
     public BaseResponse<Page<AppVO>> listGoodAppVOByPage(@RequestBody AppQueryRequest appQueryRequest) {

@@ -1,6 +1,6 @@
 package com.yw.codemother.ai;
 
-import com.yupi.yuaicodemother.utils.SpringContextUtil;
+import com.yw.codemother.utils.SpringContextUtil;
 import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.service.AiServices;
 import jakarta.annotation.Resource;

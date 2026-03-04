@@ -1,9 +1,9 @@
 package com.yw.codemother.langgraph4j.state;
 
-import com.yupi.yuaicodemother.langgraph4j.model.ImageCollectionPlan;
-import com.yupi.yuaicodemother.langgraph4j.model.ImageResource;
-import com.yupi.yuaicodemother.langgraph4j.model.QualityResult;
-import com.yupi.yuaicodemother.model.enums.CodeGenTypeEnum;
+import com.yw.codemother.langgraph4j.model.ImageCollectionPlan;
+import com.yw.codemother.langgraph4j.model.ImageResource;
+import com.yw.codemother.langgraph4j.model.QualityResult;
+import com.yw.codemother.model.enums.CodeGenTypeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

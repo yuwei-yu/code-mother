@@ -1,6 +1,6 @@
 package com.yw.codemother.langgraph4j.model;
 
-import com.yupi.yuaicodemother.langgraph4j.model.enums.ImageCategoryEnum;
+import com.yw.codemother.langgraph4j.model.enums.ImageCategoryEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

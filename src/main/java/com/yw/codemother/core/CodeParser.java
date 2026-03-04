@@ -1,7 +1,7 @@
 package com.yw.codemother.core;
 
-import com.yupi.yuaicodemother.ai.model.HtmlCodeResult;
-import com.yupi.yuaicodemother.ai.model.MultiFileCodeResult;
+import com.yw.codemother.ai.model.HtmlCodeResult;
+import com.yw.codemother.ai.model.MultiFileCodeResult;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
