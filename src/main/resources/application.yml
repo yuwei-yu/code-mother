@@ -25,7 +25,7 @@ spring:
 server:
   port: 8123
   servlet:
-#    context-path: /api
+    context-path: /api
     # cookie 30 天过期
     session:
       cookie:
