@@ -29,9 +29,9 @@ langchain4j:
       log-responses: true
     # 智能路由 AI 模型配置（用于简单的分类任务）
     routing-chat-model:
-      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+      base-url: https://api.deepseek.com
       api-key: sk-b067a64bbff349b7b9aa018f0f631f79
-      model-name: qwen-turbo
+      model-name: deepseek-chat
       max-tokens: 100
       log-requests: true
       log-responses: true
