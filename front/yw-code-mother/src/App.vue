@@ -26,4 +26,8 @@ body {
 html {
   overflow-x: hidden;
 }
+
+#app {
+  min-height: 100vh;
+}
 </style>

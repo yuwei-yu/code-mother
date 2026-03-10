@@ -3,12 +3,12 @@
     <div class="app-preview">
       <img v-if="app.cover" :src="app.cover" :alt="app.appName" />
       <div v-else class="app-placeholder">
-        <span>🤖</span>
+        <span>fishV</span>
       </div>
       <div class="app-overlay">
         <a-space>
-          <a-button type="primary" @click="handleViewChat">查看对话</a-button>
-          <a-button v-if="app.deployKey" type="default" @click="handleViewWork">查看作品</a-button>
+          <a-button type="primary" @click="handleViewChat">对话生成</a-button>
+          <a-button v-if="app.deployKey" type="default" @click="handleViewWork">预览应用</a-button>
         </a-space>
       </div>
     </div>
@@ -59,7 +59,7 @@ const handleViewWork = () => {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition:
@@ -70,12 +70,14 @@ const handleViewWork = () => {
 
 .app-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.18);
 }
 
 .app-preview {
   height: 180px;
-  background: #f5f5f5;
+  background: radial-gradient(circle at 20% 0%, rgba(56, 189, 248, 0.22), transparent 60%),
+    radial-gradient(circle at 80% 100%, rgba(59, 130, 246, 0.2), transparent 55%),
+    linear-gradient(135deg, #eff6ff, #f9fafb);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,8 +92,10 @@ const handleViewWork = () => {
 }
 
 .app-placeholder {
-  font-size: 48px;
-  color: #d9d9d9;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #4b5563;
 }
 
 .app-overlay {

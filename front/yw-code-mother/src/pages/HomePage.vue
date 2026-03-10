@@ -161,15 +161,24 @@ onMounted(() => {
     <div class="container">
       <!-- 网站标题和描述 -->
       <div class="hero-section">
-        <h1 class="hero-title">AI 应用生成平台</h1>
-        <p class="hero-description">一句话轻松创建网站应用</p>
+        <h1 class="hero-title">fishV-nocode</h1>
+        <p class="hero-description">用对话的方式，一句话生成、预览并部署你的网站应用</p>
+        <div class="hero-accent-row">
+          <span class="hero-accent">Talk to build.</span>
+          <span class="hero-accent-sub">从灵感到上线，只需几句对话。</span>
+        </div>
+        <div class="hero-badges">
+          <div class="hero-badge hero-badge-1">AI 对话生成</div>
+          <div class="hero-badge hero-badge-2">实时效果预览</div>
+          <div class="hero-badge hero-badge-3">一键部署上线</div>
+        </div>
       </div>
 
       <!-- 用户提示词输入框 -->
       <div class="input-section">
         <a-textarea
           v-model:value="userPrompt"
-          placeholder="帮我创建个人博客网站"
+          placeholder="例如：帮我创建一个用于展示个人作品的响应式网站..."
           :rows="4"
           :maxlength="1000"
           class="prompt-input"
@@ -223,9 +232,12 @@ onMounted(() => {
         >
       </div>
 
-      <!-- 我的作品 -->
+      <!-- 我的应用 -->
       <div class="section">
-        <h2 class="section-title">我的作品</h2>
+        <div class="section-header">
+          <h2 class="section-title">我的应用</h2>
+          <p class="section-subtitle">管理和继续对话生成你已经创建过的网站</p>
+        </div>
         <div class="app-grid">
           <AppCard
             v-for="app in myApps"
@@ -247,9 +259,12 @@ onMounted(() => {
         </div>
       </div>
 
-      <!-- 精选案例 -->
+      <!-- 精选应用 -->
       <div class="section">
-        <h2 class="section-title">精选案例</h2>
+        <div class="section-header">
+          <h2 class="section-title">精选应用</h2>
+          <p class="section-subtitle">来自社区与官方的优质示例，一键查看对话与最终效果</p>
+        </div>
         <div class="featured-grid">
           <AppCard
             v-for="app in featuredApps"
@@ -282,15 +297,14 @@ onMounted(() => {
   padding: 0;
   min-height: 100vh;
   background:
-    linear-gradient(180deg, #f8fafc 0%, #f1f5f9 8%, #e2e8f0 20%, #cbd5e1 100%),
-    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
+    radial-gradient(circle at 10% 15%, rgba(56, 189, 248, 0.18) 0%, transparent 55%),
+    radial-gradient(circle at 85% 85%, rgba(59, 130, 246, 0.16) 0%, transparent 55%),
+    linear-gradient(180deg, #f9fafb 0%, #e5e7eb 100%);
   position: relative;
   overflow: hidden;
 }
 
-/* 科技感网格背景 */
+/* 背景网格 */
 #homePage::before {
   content: '';
   position: absolute;
@@ -299,15 +313,11 @@ onMounted(() => {
   right: 0;
   bottom: 0;
   background-image:
-    linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
-    linear-gradient(rgba(139, 92, 246, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(139, 92, 246, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
   background-size:
-    100px 100px,
-    100px 100px,
-    20px 20px,
-    20px 20px;
+    120px 120px,
+    120px 120px;
   pointer-events: none;
   animation: gridFloat 20s ease-in-out infinite;
 }
@@ -320,15 +330,11 @@ onMounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background:
-    radial-gradient(
-      600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(59, 130, 246, 0.08) 0%,
-      rgba(139, 92, 246, 0.06) 40%,
-      transparent 80%
-    ),
-    linear-gradient(45deg, transparent 30%, rgba(59, 130, 246, 0.04) 50%, transparent 70%),
-    linear-gradient(-45deg, transparent 30%, rgba(139, 92, 246, 0.04) 50%, transparent 70%);
+  background: radial-gradient(
+    520px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(56, 189, 248, 0.16) 0%,
+    transparent 72%
+  );
   pointer-events: none;
   animation: lightPulse 8s ease-in-out infinite alternate;
 }
@@ -367,8 +373,8 @@ onMounted(() => {
 /* 英雄区域 */
 .hero-section {
   text-align: center;
-  padding: 80px 0 60px;
-  margin-bottom: 28px;
+  padding: 72px 0 56px;
+  margin-bottom: 24px;
   color: #1e293b;
   position: relative;
   overflow: hidden;
@@ -381,10 +387,11 @@ onMounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background:
-    radial-gradient(ellipse 800px 400px at center, rgba(59, 130, 246, 0.12) 0%, transparent 70%),
-    linear-gradient(45deg, transparent 30%, rgba(139, 92, 246, 0.05) 50%, transparent 70%),
-    linear-gradient(-45deg, transparent 30%, rgba(16, 185, 129, 0.04) 50%, transparent 70%);
+  background: radial-gradient(
+    ellipse 700px 320px at center,
+    rgba(59, 130, 246, 0.14) 0%,
+    transparent 70%
+  );
   animation: heroGlow 10s ease-in-out infinite alternate;
 }
 
@@ -409,18 +416,17 @@ onMounted(() => {
 }
 
 .hero-title {
-  font-size: 56px;
+  font-size: 52px;
   font-weight: 700;
   margin: 0 0 20px;
   line-height: 1.2;
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #10b981 100%);
+  background: linear-gradient(135deg, #0369a1 0%, #0ea5e9 40%, #38bdf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   letter-spacing: -1px;
   position: relative;
   z-index: 2;
-  animation: titleShimmer 3s ease-in-out infinite;
 }
 
 @keyframes titleShimmer {
@@ -436,10 +442,91 @@ onMounted(() => {
 .hero-description {
   font-size: 20px;
   margin: 0;
-  opacity: 0.8;
-  color: #64748b;
+  opacity: 0.9;
+  color: #4b5563;
   position: relative;
   z-index: 2;
+}
+
+.hero-accent-row {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  z-index: 2;
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.hero-accent {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(56, 189, 248, 0.8);
+  text-stroke: 1px rgba(56, 189, 248, 0.8);
+}
+
+.hero-accent-sub {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.hero-badges {
+  margin-top: 24px;
+  display: inline-flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: #0369a1;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(125, 211, 252, 0.6);
+  box-shadow: 0 10px 25px rgba(8, 47, 73, 0.12);
+  backdrop-filter: blur(12px);
+  animation: floatBadge 6s ease-in-out infinite;
+}
+
+.hero-badge-1 {
+  animation-delay: 0s;
+}
+
+.hero-badge-2 {
+  animation-delay: 0.8s;
+}
+
+.hero-badge-3 {
+  animation-delay: 1.6s;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatBadge {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-4px) translateX(2px);
+  }
 }
 
 /* 输入区域 */
@@ -451,17 +538,17 @@ onMounted(() => {
 
 .prompt-input {
   border-radius: 16px;
-  border: none;
+  border: 1px solid rgba(148, 163, 184, 0.35);
   font-size: 16px;
   padding: 20px 60px 20px 20px;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1);
 }
 
 .prompt-input:focus {
   background: rgba(255, 255, 255, 1);
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 22px 50px rgba(15, 23, 42, 0.16);
   transform: translateY(-2px);
 }
 
@@ -488,8 +575,8 @@ onMounted(() => {
   padding: 8px 20px;
   height: auto;
   background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  color: #475569;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  color: #111827;
   backdrop-filter: blur(15px);
   transition: all 0.3s;
   position: relative;
@@ -513,10 +600,10 @@ onMounted(() => {
 
 .quick-actions .ant-btn:hover {
   background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(59, 130, 246, 0.4);
-  color: #3b82f6;
+  border-color: rgba(56, 189, 248, 0.85);
+  color: #0369a1;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 10px 28px rgba(8, 47, 73, 0.16);
 }
 
 /* 区域标题 */
@@ -524,11 +611,25 @@ onMounted(() => {
   margin-bottom: 60px;
 }
 
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
 .section-title {
   font-size: 32px;
   font-weight: 600;
-  margin-bottom: 32px;
+  margin: 0;
   color: #1e293b;
+}
+
+.section-subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #9ca3af;
 }
 
 /* 我的作品网格 */
@@ -564,6 +665,11 @@ onMounted(() => {
     font-size: 16px;
   }
 
+  .hero-accent {
+    font-size: 18px;
+    letter-spacing: 0.16em;
+  }
+
   .app-grid,
   .featured-grid {
     grid-template-columns: 1fr;
@@ -571,6 +677,12 @@ onMounted(() => {
 
   .quick-actions {
     justify-content: center;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
   }
 }
 </style>

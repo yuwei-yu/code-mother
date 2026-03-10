@@ -3,7 +3,7 @@
     <!-- 顶部栏 -->
     <div class="header-bar">
       <div class="header-left">
-        <h1 class="app-name">{{ appInfo?.appName || '网站生成器' }}</h1>
+        <h1 class="app-name">{{ appInfo?.appName || 'fishV-nocode 对话生成' }}</h1>
         <a-tag v-if="appInfo?.codeGenType" color="blue" class="code-gen-type-tag">
           {{ formatCodeGenType(appInfo.codeGenType) }}
         </a-tag>
@@ -148,7 +148,7 @@
       <!-- 右侧网页展示区域 -->
       <div class="preview-section">
         <div class="preview-header">
-          <h3>生成后的网页展示</h3>
+          <h3>生成后的网站实时预览</h3>
           <div class="preview-actions">
             <a-button
                 v-if="isOwner && previewUrl"
@@ -174,11 +174,11 @@
         <div class="preview-content">
           <div v-if="!previewUrl && !isGenerating" class="preview-placeholder">
             <div class="placeholder-icon">🌐</div>
-            <p>网站文件生成完成后将在这里展示</p>
+            <p>通过左侧与 AI 对话，fishV-nocode 会在这里渲染生成出的网站效果</p>
           </div>
           <div v-else-if="isGenerating" class="preview-loading">
             <a-spin size="large" />
-            <p>正在生成网站...</p>
+          <p>正在生成网站，请稍候...</p>
           </div>
           <iframe
               v-else
@@ -774,8 +774,11 @@ onUnmounted(() => {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 16px;
-  background: #fdfdfd;
+  padding: 16px 20px 12px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.14) 0%, transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(59, 130, 246, 0.14) 0%, transparent 55%),
+    #f3f4f6;
 }
 
 /* 顶部栏 */
@@ -783,7 +786,10 @@ onUnmounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 16px;
+  padding: 10px 18px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
 }
 
 .header-left {
@@ -800,7 +806,7 @@ onUnmounted(() => {
   margin: 0;
   font-size: 18px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #0f172a;
 }
 
 .header-right {

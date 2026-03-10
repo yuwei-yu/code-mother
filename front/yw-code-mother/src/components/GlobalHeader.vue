@@ -2,11 +2,14 @@
   <a-layout-header class="header">
     <a-row :wrap="false">
       <!-- 左侧：Logo和标题 -->
-      <a-col flex="200px">
+      <a-col flex="220px" style="height: 64px">
         <RouterLink to="/">
           <div class="header-left">
             <img class="logo" src="@/assets/logo.png" alt="Logo" />
-            <h1 class="site-title">鱼皮应用生成</h1>
+            <div class="site-title-wrap">
+              <div class="site-title">fishV-nocode</div>
+              <div class="site-subtitle">AI 驱动的网站生成平台</div>
+            </div>
           </div>
         </RouterLink>
       </a-col>
@@ -53,7 +56,13 @@ import { useRouter } from 'vue-router'
 import { type MenuProps, message } from 'ant-design-vue'
 import { useLoginUserStore } from '@/stores/loginUser.ts'
 import { userLogout } from '@/api/userController.ts'
-import { LogoutOutlined, HomeOutlined } from '@ant-design/icons-vue'
+import {
+  LogoutOutlined,
+  HomeOutlined,
+  UserOutlined,
+  AppstoreOutlined,
+  CompassOutlined,
+} from '@ant-design/icons-vue'
 
 const loginUserStore = useLoginUserStore()
 const router = useRouter()
@@ -74,18 +83,21 @@ const originItems = [
   },
   {
     key: '/admin/userManage',
+    icon: () => h(UserOutlined),
     label: '用户管理',
     title: '用户管理',
   },
   {
     key: '/admin/appManage',
+    icon: () => h(AppstoreOutlined),
     label: '应用管理',
     title: '应用管理',
   },
   {
     key: 'others',
-    label: h('a', { href: 'https://www.codefather.cn', target: '_blank' }, '编程导航'),
-    title: '编程导航',
+    icon: () => h(CompassOutlined),
+    label: '项目源码',
+    title: '项目源码',
   },
 ]
 
@@ -110,7 +122,12 @@ const menuItems = computed<MenuProps['items']>(() => filterMenus(originItems))
 const handleMenuClick: MenuProps['onClick'] = (e) => {
   const key = e.key as string
   selectedKeys.value = [key]
-  // 跳转到对应页面
+  // 外链跳转
+  if (key === 'others') {
+    window.open('https://github.com/yuwei-yu/code-mother', '_blank')
+    return
+  }
+  // 路由跳转
   if (key.startsWith('/')) {
     router.push(key)
   }
@@ -133,25 +150,62 @@ const doLogout = async () => {
 
 <style scoped>
 .header {
-  background: #fff;
-  padding: 0 24px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(18px);
+  padding: 0 32px;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  display: flex;
+  align-items: center;
+  height: 64px;
 }
 
 .header-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  height: 64px;
 }
 
 .logo {
-  height: 48px;
-  width: 48px;
+  height: 40px;
+  width: 40px;
+  border-radius: 12px;
+}
+
+.site-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  justify-content: center;
+  height: 64px;
 }
 
 .site-title {
   margin: 0;
   font-size: 18px;
-  color: #1890ff;
+  font-weight: 700;
+  height: 34px;
+  line-height: 42px;
+  background: linear-gradient(135deg, #0369a1, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.site-subtitle {
+  margin: 0;
+  height: 22px;
+  line-height: 22px;
+  font-size: 11px;
+  color: #64748b;
+}
+
+:deep(.ant-row) {
+  width: 100%;
+  align-items: center;
+}
+
+:deep(.ant-menu-horizontal) {
+  line-height: 64px;
 }
 
 .ant-menu-horizontal {
