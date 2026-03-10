@@ -14,7 +14,7 @@
     </div>
     <div class="app-info">
       <div class="app-info-left">
-        <a-avatar :src="app.user?.userAvatar" :size="40">
+        <a-avatar :src="app.user?.userAvatar || defaultAvatar" :size="40">
           {{ app.user?.userName?.charAt(0) || 'U' }}
         </a-avatar>
       </div>
@@ -29,6 +29,8 @@
 </template>
 
 <script setup lang="ts">
+import defaultAvatar from '@/assets/logo.png'
+
 interface Props {
   app: API.AppVO
   featured?: boolean
