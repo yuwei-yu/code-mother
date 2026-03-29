@@ -3,7 +3,7 @@ langchain4j:
   open-ai:
     chat-model:
       base-url: https://api.deepseek.com
-      api-key: sk-b067a64bbff349b7b9aa018f0f631f79
+      api-key: sk-XXXX
       model-name: deepseek-chat
       log-responses: true
       #      strict-json-schema: true
@@ -13,7 +13,7 @@ langchain4j:
       max-retries: 3
     streaming-chat-model:
       base-url: https://api.deepseek.com
-      api-key: sk-b067a64bbff349b7b9aa018f0f631f79
+      api-key: sk-XXXX
       model-name: deepseek-chat
       max-tokens: 8192
       log-requests: true
@@ -21,7 +21,7 @@ langchain4j:
     # 推理 AI 模型配置（用于复杂的推理任务）
     reasoning-streaming-chat-model:
       base-url: https://api.deepseek.com
-      api-key: sk-b067a64bbff349b7b9aa018f0f631f79
+      api-key: sk-XXX
       model-name: deepseek-reasoner
       max-tokens: 32768
       temperature: 0.1
