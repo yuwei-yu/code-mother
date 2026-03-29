@@ -11,14 +11,14 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/code_mother
     username: root
-    password: yw20041203
+    password: 123
   # redis
   data:
     redis:
       host: localhost
       port: 6379
       database: 0
-      password: yw20041203
+      password: 123
       ttl: 3600 # 缓存过期时间（秒）
   profiles:
     active: local
